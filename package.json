@@ -12,6 +12,7 @@
     "nodemon": "^2.0.6"
   },
   "scripts": {
-    "start": "npm start"
+    "postinstall": "npm run build",
+    "start": "node server.js"
   }
 }
