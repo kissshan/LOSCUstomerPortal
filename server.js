@@ -68,8 +68,8 @@ app.get('/api/list_user', async function(req, res) {
 // start app ===============================================
 //app.listen(process.env.PORT || 5000);
 const host = '0.0.0.0';
-const port = process.env.PORT;
-app.listen(port, host, function() {
+const porttttt = process.env.PORT;
+app.listen(porttttt, host, function() {
     console.log("Server started.......");
   });
 console.log('Magic happens on port ' + port); // shoutout to the user
