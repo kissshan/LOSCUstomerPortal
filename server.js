@@ -67,10 +67,10 @@ app.get('/api/list_user', async function(req, res) {
 
 // start app ===============================================
 //app.listen(process.env.PORT || 5000);
-var server_port = 8000 || process.env.PORT || 5000;
-var server_host = '0.0.0.0';
-app.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port);
-});
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
+app.listen(port, host, function() {
+    console.log("Server started.......");
+  });
 console.log('Magic happens on port ' + port); // shoutout to the user
-exports = module.exports = app; // expose app
+exports = module.exports = app; // expose 
