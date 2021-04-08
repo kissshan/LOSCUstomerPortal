@@ -8,8 +8,8 @@ module.exports = function(app, sfcon) {
     // route to handle all angular requests
     debugger;
     app.get('/view/*', function(req, res) {
-        //res.sendfile('./public/index.html');
-        res.sendfile('./public/views/Signin.html');
+        res.sendfile('./public/index.html');
+        //res.sendfile('./public/views/Signin.html');
     });
 
 
