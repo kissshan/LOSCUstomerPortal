@@ -68,7 +68,7 @@ app.get('/api/list_user', async function(req, res) {
 // start app ===============================================
 //app.listen(process.env.PORT || 5000);
 const host = '0.0.0.0';
-const porttttt = process.env.PORT;
+const porttttt = process.env.PORT || 5000;
 app.listen(porttttt, host, function() {
     console.log("Server started.......");
   });

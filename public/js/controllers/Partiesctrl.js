@@ -22,5 +22,5 @@ angular.module('Partiesctrl',[]).controller('PartiesController',function($scope,
       $location.path("view/createPartyContact/"+$rootScope.accountId);
     }
     
-    $scope.getParties();
+    $scope.getParties()
 });
