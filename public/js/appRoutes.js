@@ -20,8 +20,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		
 
 		.when('/view/parties/:accountId', {
-			templateUrl: 'views/Parties.html'//,
-			//controller: 'PartiesController'	
+			templateUrl: 'views/Parties.html',
+			controller: 'PartiesController'	
 		})
 
 		.when('/view/collateral/:accountId', {
