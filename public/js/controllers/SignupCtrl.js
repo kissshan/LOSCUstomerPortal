@@ -1,6 +1,7 @@
 angular.module('SignupCtrl',[]).controller('signupController',function($scope,$rootScope,$q,$http,Register,$window, $location){
     debugger;
     console.log('signup controller initiated::');
+    $rootScope.signup = true;
     $rootScope.accountId = '';
     $scope.reenterPassword = '';
     $scope.signupDetailsMDL = {
@@ -37,6 +38,7 @@ angular.module('SignupCtrl',[]).controller('signupController',function($scope,$r
               }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
+                    $rootScope.signup = false;
                     $location.path("view/signin/");
                 }
               })

@@ -1,10 +1,12 @@
 
-angular.module('NerdCtrl', []).controller('NerdController', function($scope,Nerd, $http, $q,$rootScope) {
+angular.module('NerdCtrl', []).controller('NerdController', function($scope,Nerd, $http, $q,$rootScope,Signin,$location) {
 	debugger;
+	$scope.name ='Ajeet';
 	console.log('Nerd initiated');
 	console.log('$rootScope.accId::'+$rootScope.accId);
 	console.log('$rootScope.loginInScs = true;::'+$rootScope.loginInScs);
 	$rootScope.loginInScs = false;
+	$rootScope.signup = false;
 	$scope.response = '';
 	$scope.indexInitiate = false;
 	if($rootScope.loginInScs)
@@ -34,5 +36,26 @@ angular.module('NerdCtrl', []).controller('NerdController', function($scope,Nerd
 			$scope.status = 'Unable to load data';
 		});
 	}
+
+	$scope.Signin = function(){
+        debugger;
+        console.log('$scope.signinData::'+$scope.signinDataMDL);
+        Signin.verifySignin(JSON.stringify($scope.signinDataMDL))
+        .then(function(response){
+            console.log('response::'+response)
+            if(response.data.length > 0){
+                $rootScope.unqAccId = response.data[0].Id;
+                console.log($rootScope.unqAccId);
+                $rootScope.loginInScs = true;
+                $location.path("view/account/"+$rootScope.unqAccId);
+                
+            }else{
+                alert('Please enter valid custid or number.')
+            }
+            
+        },function(err){
+            console.log('err::'+err)
+        })
+    }
 	
 });
